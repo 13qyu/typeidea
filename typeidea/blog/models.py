@@ -16,6 +16,9 @@ class Category(BaseModel):
     class Meta:
         verbose_name = verbose_name_plural = '分类'
 
+    def __str__(self):
+        return self.name
+
 
 class Tag(BaseModel):
     name = models.CharField(max_length=10, verbose_name='名称')
@@ -26,6 +29,9 @@ class Tag(BaseModel):
 
     class Meta:
         verbose_name = verbose_name_plural = '标签'
+
+    def __str__(self):
+        return self.name
 
 
 class Post(BaseModel):
@@ -51,3 +57,5 @@ class Post(BaseModel):
         verbose_name = verbose_name_plural = '文章'
         ordering = ['-id']
 
+    def __str__(self):
+        return self.title
